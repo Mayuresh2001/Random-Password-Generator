@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;200;300;400;500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --vb-violet: hsl(285, 91%, 52%); /*100*/
+  --vb-violet2: hsl(290, 70%, 36%); /*200*/
+  --lt-violet2: hsl(281, 89%, 26%); /*300*/
+  --lt-violet: hsl(268, 47%, 21%); /*400*/
+  --dk-violet: hsl(268, 75%, 9%); /*500*/
+  --vb-yellow: hsl(52, 100%, 62%);
+  --pl-white: hsl(0, 0%, 100%);
+  --vb-cyan2: hsl(177, 92%, 70%); /*100*/
+  --vb-cyan: hsl(176, 100%, 44%); /*200*/
+  --dk-text: hsl(198, 20%, 13%); /*300*/
+}
+.slider::-webkit-slider-thumb{
+  appearance: none;
+  height: 1.5rem;
+  width: 1.5rem;
+  border-radius: 50%;
+  background-color: #EF9273;
+  cursor: pointer;
+  margin-top: -3px;
+  box-shadow: 0px 0px 20px 0px #EF9273 ;
+  transition:all 100ms ease-in;
+}

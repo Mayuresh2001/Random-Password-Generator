@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="font-Spartan text-[#0d0d0d] box-border m-0">
+    <section
+      class="w-full h-[100vh] mx-auto flex flex-nowrap items-center justify-center flex-col bg-[#FEF9F8]">
+      <h1 class="font-bold text-3xl">PASSWORD GENERATOR</h1>
+
+      <div class="min-w-[25%]">
+        <div class="bg-white rounded-lg relative flex justify-between items-center overflow-hidden drop-shadow-md shadow-slate-700">
+
+          <!-- textbox -->
+          <input
+            class="my-auto w-full  py-2 font-semibold border relative left-3 placeholder:text-xl placeholder:absolute placeholder:top-[30%] placeholder:my-auto placeholder-[#94A3B8] focus:outline-0 border-none "
+            readonly
+            type="text"
+            placeholder=" PASSWORD"
+            data-passworddisplay />
+
+          <div class="after:absolute bg-gray-400 relative active:visible active:opacity-100 active:scale-100 text-5xl -top-9 -left-2 px-2 py-1 rounded-2xl default:opacity-0 default:scale-0 transition-all" data-copymsg></div>
+
+          <button class=" absolute right-3 -translate-y-[15%]" title="Copy" width="23" heigth="23" data-copy>
+            <svg
+              class="mx-auto -mb-1"
+              xmlns="http://www.w3.org/2000/svg"
+              width="21"
+              height="21"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#0d0d0d"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="arcs">
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+              <path
+                d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+            </svg>
+          </button>
+        </div>
+        <!-- password length customizer-->
+
+        <div>
+          <div class="flex justify-between my-3">
+            <p class="font-medium text-lg">Password Length</p>
+            <p class="" data-passwordlength>0</p>
+          </div>
+          <!-- slider -->
+          <input
+            class="slider w-full appearance-none cursor-pointer bg-[#EF9273] rounded-lg mt-4 mb-6 h-3 slider-thumb:bg-gray-400"
+            placeholder="."
+            type="range"
+            min="1"
+            max="20"
+            step="1"
+            data-lengthslider />
+          
+            <div class="my-3">
+               
+            <!-- Checkboxes -->
+          <!-- checkbox-1  -->
+            <div class="flex items-center my-2 gap-x-4">
+              <input class="w-4 h-4 bg-white border-2 border-[#0d0d0d] rounded-sm cursor-pointer relative  appearance-none  checked:bg-[#EF9273] before:checked:content-['✓'] before:checked:absolute before:checked:font-semibold before:checked:text-sm checked:border-none
+              before:checked:left-[15%] before:checked:-top-[1px] text-[#FEF9F8]" type="checkbox" id="uppercase" />
+              <label class="text-[#0d0d0d] text-lg tracking-wide" for="uppercase">Includes Uppercase Characters</label>
+            </div>
+         <!-- checkbox-2  -->
+            <div class="flex items-center my-2 gap-x-4">
+              <input class="w-4 h-4 bg-white  border-2 border-[#0d0d0d] rounded-sm cursor-pointer relative  appearance-none checked:bg-[#EF9273] before:checked:content-['✓'] before:checked:absolute before:checked:font-semibold before:checked:text-sm checked:border-none
+              before:checked:left-[15%] before:checked:-top-[1px] text-[#FEF9F8]" type="checkbox" id="lowercase" />
+              <label class="text-[#0d0d0d] text-lg tracking-wide" for="lowercase">Includes Lowercase Characters</label>
+            </div>
+<!-- checkbox-3 -->
+            <div class="flex items-center my-2 gap-x-4">
+              <input class="w-4 h-4 bg-white  border-2 border-[#0d0d0d] rounded-sm cursor-pointer relative  appearance-none checked:bg-[#EF9273] before:checked:content-['✓'] before:checked:absolute before:checked:font-semibold before:checked:text-sm checked:border-none
+              before:checked:left-[15%] before:checked:-top-[1px] text-[#FEF9F8]" type="checkbox" id="numbers" />
+              <label class="text-[#0d0d0d] text-lg tracking-wide" for="numbers">Includes Numbers</label>
+            </div>
+<!-- checkbox-4  -->
+            <div class="flex items-center my-2 gap-x-4">
+              <input class="w-4 h-4 bg-white  border-2 border-[#0d0d0d] rounded-sm cursor-pointer relative  appearance-none checked:bg-[#EF9273] before:checked:content-['✓'] before:checked:absolute before:checked:font-semibold before:checked:text-sm checked:border-none
+              before:checked:left-[15%] before:checked:-top-[1px] text-[#FEF9F8]" type="checkbox" id="symbols" />
+              <label class="text-[#0d0d0d] text-lg tracking-wide" for="symbols">Includes Symbols</label>
+            </div>
+          </div>
+
+
+          <!-- strength indicator  -->
+          <div class="m-2 my-2 flex justify-between ">
+            <p class="text-xl font-medium">Strength</p>
+            <div class="h-5 w-5 rounded-xl" data-strengthindicator></div>
+          </div>
+          <!-- generate password  -->
+          <button class="generateButton hover:bg-[#B7715A] bg-[#EF9273] w-full rounded-xl p-3 font-semibold text-xl text-[#FEF9F8] ">
+            Generate Password
+          </button>
+        </div>
+      </div>
+    </section>
+    <script src="script.js"></script>
+  </body>
+</html>
